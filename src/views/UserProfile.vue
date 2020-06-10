@@ -41,7 +41,7 @@
                                                         label="Writer"
                                                         placeholder="name"
                                                         input-classes="form-control-alternative"
-                                                        v-model="model.username"
+                                                        v-model="inputwriter"
                                             />
                                         </div>
                                         <!-- <div class="col-lg-6">
@@ -67,7 +67,7 @@
                                                         label="Creation Date"
                                                         placeholder="Creation Date "
                                                         input-classes="form-control-alternative"
-                                                        v-model="model.lastName"
+                                                        v-model="inputDate"
                                             />
                                         </div>
                                     </div>
@@ -99,8 +99,8 @@
                                             <base-input alternative=""
                                                         label="Title"
                                                         placeholder="제목을 입력하세요"
-                                                        input-classes="form-control-alternative"
-                                                        v-model="model.username"
+                                                        input-classes="form-control-alternative" 
+                                                        v-model="inputTitle"
                                             />
                                         </div>
                                        
@@ -154,14 +154,16 @@
                                 <div class="pl-lg-4">
                                     <div class="form-group">
                                         <base-input alternative=""
-                                                    label="Template Content">
+                                                    label="Template Content"
+                                                    v-model="inputContent"
+                                                    >
                                             <textarea id="template-text2" rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">
                                                </textarea>
                                         </base-input>
                                     </div>
                                 </div>
                                 <div id="button-submit">
-                                    <base-button  type="primary">글쓰기</base-button>
+                                    <base-button  v-on:click="submmit" type="primary">글쓰기</base-button>
                                 </div>
                             </form>
                         </template>
@@ -176,26 +178,30 @@
     name: 'user-profile',
     data() {
       return {
-        model: {
-          username: '',
-          email: '',
-          firstName: '',
-          lastName: '',
-          address: '',
-          city: '',
-          country: '',
-          zipCode: '',
-          about: '',
-        },
         radio: {
           radio1: "radio1",
           //radio2: "radio3"
         },
-        data(){
-
-        } 
+        writer:'',
+        createDate:'',
+        category:'',
+        title:'',
+        content:'',
+        inputContent:'',
+        inputTitle:'',
+        inputwriter:'',
+        inputDate:'',
       }
     },
+    methods:{
+        submmit:function(){
+            this.writer = this.inputwriter;
+            this.title = this.inputTitle;
+            this.content = this.inputContent;
+            alert(this.writer);
+        }
+       
+    }
   };
 </script>
 <style>
