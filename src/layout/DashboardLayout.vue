@@ -15,9 +15,9 @@
         /> -->
 
         <!-- <sidebar-item :link="{name: 'Maps', icon: 'ni ni-pin-3 text-orange', path: '/maps'}"/> -->
-        <sidebar-item :link="{name: 'template', icon: 'ni ni-single-copy-04 text-yellow', path: '/profile'}"/>
+        <sidebar-item :link="{name: 'template', icon: 'ni ni-single-copy-04 text-yellow', path: '/template'}"/>
          
-        <sidebar-item :link="{name: 'template store', icon: 'ni ni-collection text-red', path: '/tables'}"/>
+        <sidebar-item :link="{name: 'template store', icon: 'ni ni-collection text-red', path: '/List'}"/>
          <sidebar-item :link="{name: 'Setting', icon: 'ni ni-settings-gear-65 text-blue', path: '/icons'}"/> 
       
        

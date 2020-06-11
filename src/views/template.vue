@@ -194,11 +194,11 @@
       }
     },
     methods:{
-        submmit:function(){
+        submmit(){
             this.writer = this.inputwriter;
             this.title = this.inputTitle;
             this.content = this.inputContent;
-            alert(this.writer);
+            alert(this.title);
         }
        
     }
@@ -216,4 +216,4 @@
      width: 111px;
     font-size: 11px;
 }
-</style>
+</style> 

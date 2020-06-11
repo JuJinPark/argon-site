@@ -5,9 +5,10 @@ const config = {
 };
 
 
-
+//API함수들을 정리한다,
 function fetchList(){
-  return axios.get(config.baseUrl+'/listtemplate.json');
+  //리스트 불러오기
+  return axios.get(config.baseUrl+'/listtemplate/1.json');
 }
 
 

@@ -1,59 +1,39 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import DashboardLayout from '@/layout/DashboardLayout'
-import AuthLayout from '@/layout/AuthLayout'
 Vue.use(Router)
 
 export default new Router({
   linkExactActiveClass: 'active',
+  mode: 'history',
   routes: [
     {
+      
       path: '/',
-      redirect: 'profile',
+      redirect: 'List',
       component: DashboardLayout,
       children: [
         {
-          path: '/profile',
-          name: 'profile',
+          path: '/template',
+          name: 'template',
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/UserProfile.vue')
+          component: () => import(/* webpackChunkName: "demo" */ './views/template.vue')
         },
         {
           path: '/icons',
           name: 'icons',
           component: () => import(/* webpackChunkName: "demo" */ './views/Icons.vue')
         },
+      
         {
-          path: '/profile',
-          name: 'profile',
-          component: () => import(/* webpackChunkName: "demo" */ './views/UserProfile.vue')
-        },
-        {
-          path: '/maps',
-          name: 'maps',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Maps.vue')
-        },
-        {
-          path: '/tables',
-          name: 'tables',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Tables.vue')
+          path: '/List',
+          name: 'List',
+          component: () => import(/* webpackChunkName: "demo" */ './views/List.vue')
         }
       ]
     },
-    {
-      path: '/',
-      redirect: 'register',
-      component: AuthLayout,
-      children: [
-        
-        {
-          path: '/register',
-          name: 'register',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Register.vue')
-        }
-      ]
-    }
+    
   ]
 })
