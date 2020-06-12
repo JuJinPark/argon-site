@@ -18,7 +18,7 @@
         <sidebar-item :link="{name: 'template', icon: 'ni ni-single-copy-04 text-yellow', path: '/template'}"/>
          
         <sidebar-item :link="{name: 'template store', icon: 'ni ni-collection text-red', path: '/List'}"/>
-         <sidebar-item :link="{name: 'Setting', icon: 'ni ni-settings-gear-65 text-blue', path: '/icons'}"/> 
+         <sidebar-item :link="{name: 'Setting', icon: 'ni ni-settings-gear-65 text-blue', path: '/setting'}"/> 
       
        
         <!-- <sidebar-item :link="{name: 'Login', icon: 'ni ni-key-25 text-info', path: '/login'}"/> -->

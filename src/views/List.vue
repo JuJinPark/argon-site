@@ -19,11 +19,13 @@
 </template>
 <script>
   import ProjectsTable from './Tables/ProjectsTable'
+
   export default {
     name: 'tables',
     components: {
       ProjectsTable
     }
+    
   };
 </script>
 <style></style>

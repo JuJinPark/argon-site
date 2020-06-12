@@ -1,0 +1,82 @@
+
+{
+  "DataList":[
+          {
+          "id":"jujin",
+          "subject":"google Mail template",
+          "description":"template1",
+          "keys":"templateKey1",
+          "content":"content1",
+          "category": {
+             "id":"category1",
+              "name":"카테고리1"
+             },
+          "state":false,
+        "histories":[
+           {
+               "message":"log Message",
+               "by":  "soon",
+            "time": "20-06-21"
+           }
+           ]
+          },
+          {
+            "id":"soon",
+            "subject":"google Mail template",
+            "description":"template2",
+            "keys":"templateKey2",
+            "content":"content2",
+            "category": {
+               "id":"category2",
+                "name":"카테고리2"
+               },
+            "state":false,
+          "histories":[
+             {
+                 "message":"log Message",
+                 "by":  "soon",
+              "time": "20-06-22"
+             }
+             ]
+            },
+            {
+              "id":"jojia",
+              "subject":"google Mail template",
+              "description":"template3",
+              "keys":"templateKey3",
+              "content":"content3",
+              "category": {
+                 "id":"category3",
+                  "name":"카테고리3"
+                 },
+              "state":false,
+            "histories":[
+               {
+                   "message":"log Message",
+                   "by":  "soon",
+                "time": "20-03-24"
+               }
+               ]
+              },
+              {
+                "id":"hansol",
+                "subject":"google Mail template",
+                "description":"template4",
+                "keys":"templateKey4",
+                "content":"content4",
+                "category": {
+                   "id":"category4",
+                    "name":"카테고리4"
+                   },
+                "state":false,
+              "histories":[
+                 {
+                     "message":"log Message",
+                     "by": "soon",
+                  "time": "20-01-24"
+                 }
+                 ]
+            }
+      ]
+ }
+ 

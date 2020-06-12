@@ -22,9 +22,9 @@ export default new Router({
           component: () => import(/* webpackChunkName: "demo" */ './views/template.vue')
         },
         {
-          path: '/icons',
-          name: 'icons',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Icons.vue')
+          path: '/setting',
+          name: 'setting',
+          component: () => import(/* webpackChunkName: "demo" */ './views/setting.vue')
         },
       
         {

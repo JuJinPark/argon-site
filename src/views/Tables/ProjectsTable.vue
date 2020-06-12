@@ -8,7 +8,22 @@
           <h3 class="mb-0" :class="type === 'dark' ? 'text-white': ''">
             게시판
           </h3>
+           
+
+          
         </div>
+        <div  class="col col-lg-2" id="checkbutton">
+              <base-dropdown>
+                <base-button slot="title" type="secondary" class="dropdown-toggle">
+                  category
+                </base-button>
+                <a class="dropdown-item" href="#">category1</a>
+                <a class="dropdown-item" href="#">category2</a>
+                <a class="dropdown-item" href="#">category3</a>
+              </base-dropdown>
+             <base-button  v-on:click="changeflag" v-if="check===true" type="primary">삭제</base-button>
+              <base-button v-on:click="changeflag" v-if="check===false" type="primary">확인</base-button>
+         </div> 
        
       </div>
     </div>
@@ -20,6 +35,9 @@
                   tbody-classes="list"
                   :data="tableData">
         <template slot="columns">
+          <th v-if="check===false">
+            선택
+          </th>
           <th>제목</th>
           <th>날짜</th>
           <th>카테고리</th>
@@ -28,6 +46,10 @@
         </template>
 
         <template slot-scope="{row}">
+          <th v-if="check===false">
+            <base-checkbox class="mb-3" v-model="row.flag">
+            </base-checkbox>
+          </th>
           <th scope="row">
             <div class="media align-items-center">
               <div class="media-body">
@@ -44,49 +66,7 @@
               <span class="status">{{row.status}}</span>
             </badge>
           </td>
-          <!-- <td>
-            <div class="avatar-group">
-              <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                <img alt="Image placeholder" src="img/theme/team-1-800x800.jpg">
-              </a>
-              <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                <img alt="Image placeholder" src="img/theme/team-2-800x800.jpg">
-              </a>
-              <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                <img alt="Image placeholder" src="img/theme/team-3-800x800.jpg">
-              </a>
-              <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                <img alt="Image placeholder" src="img/theme/team-4-800x800.jpg">
-              </a>
-            </div>
-          </td> -->
-
-          <!-- <td>
-            <div class="d-flex align-items-center">
-              <span class="completion mr-2">{{row.completion}}%</span>
-              <div>
-                <base-progress :type="row.statusType"
-                               :show-percentage="false"
-                               class="pt-0"
-                               :value="row.completion"/>
-              </div>
-            </div>
-          </td> -->
-
-          <!-- <td class="text-right">
-            <base-dropdown class="dropdown"
-                           position="right">
-              <a slot="title" class="btn btn-sm btn-icon-only text-light" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-v"></i>
-              </a>
-
-              <template>
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </template>
-            </base-dropdown>
-          </td> -->
+         
 
         </template>
 
@@ -95,7 +75,11 @@
 
     <div class="card-footer d-flex justify-content-end"
          :class="type === 'dark' ? 'bg-transparent': ''">
+          
       <base-pagination total="30"></base-pagination>
+    </div>
+    <div>
+     
     </div>
 
   </div>
@@ -109,8 +93,17 @@
       },
       title: String
     },
+    methods:{
+      changeflag(){
+         if(this.check){ this.check= false;}
+         else {this.check = true;} 
+
+        alert(this.check);
+      }
+    },
     data() {
       return {
+        check:true,
         tableData: [
           {
             img: 'img/theme/bootstrap.jpg',
@@ -118,7 +111,8 @@
             budget: '20/05/10',
             status: 'category2',
             statusType: 'warning',
-            completion: 60
+            completion: 60,
+            flag : false
           },
           {
             img: 'img/theme/angular.jpg',
@@ -126,7 +120,8 @@
             budget: '20/05/11',
             status: 'category1',
             statusType: 'success',
-            completion: 100
+            completion: 100,
+            flag : false
           },
           {
             img: 'img/theme/sketch.jpg',
@@ -134,7 +129,8 @@
             budget: '20/05/15',
             status: 'category5',
             statusType: 'danger',
-            completion: 72
+            completion: 72,
+            flag : false
           },
           {
             img: 'img/theme/react.jpg',
@@ -142,7 +138,8 @@
             budget: '20/04/10',
             status: 'category2',
             statusType: 'info',
-            completion: 90
+            completion: 90,
+            flag : false
           },
           {
             img: 'img/theme/vue.jpg',
@@ -150,7 +147,8 @@
             budget: '20/02/10',
             status: 'category1',
             statusType: 'success',
-            completion: 100
+            completion: 100,
+            flag : false
           }
         ]
       }
@@ -158,4 +156,7 @@
   }
 </script>
 <style>
+#checkbutton{
+  padding-left :30%
+}
 </style>
